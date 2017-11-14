@@ -1,0 +1,17 @@
+page-card-setting {
+
+  .item-block {
+    padding-left: 0;
+  }
+
+  .split-row {
+
+    ion-col:first-child {
+      padding-left: 0;
+    }
+
+    ion-col:last-child {
+      padding-right: 0;
+    }
+  }
+}

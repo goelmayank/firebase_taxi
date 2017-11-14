@@ -1,0 +1,88 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>ionTaxi</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- Show map here -->
+  <div id="{{ mapId }}" [ngStyle]="{height: mapHeight + 'px'}"></div>
+
+  <!--Choose origin and destination places-->
+  <div class="map-overlay">
+    <ion-list class="list-no-border card address-block">
+      <ion-item (click)="chooseOrigin()">
+        <div item-left text-center>
+          <span class="round"></span>
+        </div>
+        <div>{{ origin ? origin.vicinity : '' }}</div>
+      </ion-item>
+      <ion-item (click)="chooseDestination()">
+        <div item-left text-center>
+          <ion-icon name="pin" color="danger"></ion-icon>
+        </div>
+        <div>{{ destination ? destination.vicinity : '' }}</div>
+      </ion-item>
+    </ion-list>
+
+    <ion-grid class="common-bg" [hidden]="!destination">
+      <ion-row>
+        <ion-col col-4 (click)="choosePaymentMethod()">
+          <ion-icon name="ios-cash-outline" color="gray"></ion-icon>
+          <span ion-text color="gray">{{ getPaymentMethod() }}</span>
+        </ion-col>
+        <ion-col col-4 (click)="showNotePopup()">
+          <ion-icon name="ios-create-outline" color="gray"></ion-icon>
+          <span ion-text color="gray">Note</span>
+        </ion-col>
+        <ion-col col-4>
+          <ion-icon name="ios-pricetag-outline" color="gray"></ion-icon>
+          <span ion-text color="gray">Promo</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <div class="align-bottom" padding [hidden]="showModalBg">
+    <div class="vehicle-collapsed round" *ngFor="let vehicle of vehicles">
+      <div class="bg light-bg round" *ngIf="vehicle.active"></div>
+      <ion-item class="vehicle" *ngIf="vehicle.active" (click)="toggleVehicles()">
+        <img src="assets/img/icon/{{ vehicle.icon }}.svg" alt="" item-start>
+        <span class="name">{{ vehicle.name }}</span>
+        <span class="fee" item-end>{{ currency }}{{ vehicle.fee }}</span>
+      </ion-item>
+    </div>
+
+    <button ion-button block color="primary" [hidden]="destination" (click)="chooseDestination()">CHOOSE YOUR DROP-OFF
+    </button>
+    <button ion-button block color="primary" [hidden]="!destination" (click)="book()">BOOK</button>
+  </div>
+</ion-content>
+
+<div class="modal-bg" [hidden]="!showModalBg">
+  <div class="vehicles" [hidden]="!showVehicles" padding>
+    <ion-list class="round list-full-border">
+      <ion-item class="vehicle" *ngFor="let vehicle of vehicles; let i = index" [ngClass]="{'active': vehicle.active}"
+                (click)="chooseVehicle(i)">
+        <img src="assets/img/icon/{{ vehicle.icon }}.svg" alt="" item-start>
+        <span class="name">{{ vehicle.name }}</span>
+        <span class="fee" item-end>{{ currency }}{{ vehicle.fee }}</span>
+      </ion-item>
+    </ion-list>
+    <div text-center>
+      <button ion-button class="border-btn round-btn" color="dark" (click)="toggleVehicles()">
+        <ion-icon name="ios-arrow-down"></ion-icon>
+      </button>
+    </div>
+  </div>
+</div>

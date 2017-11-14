@@ -1,0 +1,30 @@
+page-modal-job,
+.modal-job {
+  h4 {
+    margin-top: 0;
+  }
+
+  .icon-job {
+    font-size: 2em;
+    margin-top: 5px;
+  }
+
+  .remaining {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      width: 24px;
+      padding: 3px;
+      border-radius: 50%;
+      border: 1px solid color($colors, secondary);
+      font-size: 1em;
+    }
+  }
+
+  .text-middle {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -1,0 +1,11 @@
+page-map {
+
+  #map {
+    height: 100%;
+  }
+
+  .marker {
+    position: fixed;
+    z-index: 1000;
+  }
+}

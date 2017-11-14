@@ -1,0 +1,8 @@
+page-user {
+
+  @extend page-driver;
+
+  #avatar {
+    display: none;
+  }
+}

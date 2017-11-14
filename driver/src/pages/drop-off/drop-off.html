@@ -1,0 +1,34 @@
+<!--
+  Generated template for the DropOffPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Drop Off</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class=" pick-up primary-bg">
+  <div class="light-bg padding-xs" padding-top>
+
+    <ion-badge color="secondary" margin-bottom>{{ trip.payment_method }}</ion-badge>
+
+    <ion-list class="list-no-border" margin-top>
+      <ion-item class="round secondary-bg" margin-top>
+        <ion-icon name="ios-flag-outline" color="light" item-left></ion-icon>
+        <div>
+          <span ion-text color="light">{{ trip.destination.vicinity }}</span>
+        </div>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="bottom-buttons full-width" padding>
+    <button ion-button block color="secondary" (click)="showPayment()">PAYMENT</button>
+  </div>
+</ion-content>

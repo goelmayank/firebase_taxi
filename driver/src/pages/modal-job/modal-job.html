@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ModalJobPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="light">
+    <ion-title>New job</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 text-center>
+        <ion-icon name="pin" class="icon-job"></ion-icon>
+        <div class="distance">{{ job.origin.distance }}km</div>
+      </ion-col>
+      <ion-col class="text-middle" col-10>
+        <h5>{{ job.origin.vicinity }}</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-2 text-center>
+        <ion-icon name="ios-flag-outline" class="icon-job"></ion-icon>
+        <div class="distance">{{ job.destination.distance }}km</div>
+      </ion-col>
+      <ion-col class="text-middle" col-10>
+        <h5>{{ job.destination.vicinity }}</h5>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- buttons on bottom-->
+  <ion-grid class="bottom-buttons">
+    <ion-row>
+      <ion-col col-5>
+        <button ion-button block color="danger" (click)="close()">SKIP</button>
+      </ion-col>
+      <ion-col col-2 text-center class="remaining">
+        <span>{{ remainingTime }}</span>
+      </ion-col>
+      <ion-col col-5>
+        <button ion-button block color="secondary" (click)="accept()">SELECT</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,43 @@
+{
+  "rules": {
+    "deals": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "drivers": {
+      ".read": true,
+      ".write": false,
+      "$userId": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid == $userId"
+      }
+    },
+    "localities": {
+      ".read": true,
+      ".write": "auth != null",
+    },
+    "master_settings": {
+      ".read": true,
+      ".write": false,
+    },
+    "passengers": {
+      ".read": true,
+      "$userId": {
+        ".read": "auth != null",
+        ".write": "auth != null && auth.uid == $userId"
+      }
+    },
+    "transactions": {
+      ".read": true,
+      ".write": "auth != null",
+    },
+    "trips": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+    },
+    "$other": {
+      ".read": "auth != null",
+      ".write": false
+    }
+  }
+}

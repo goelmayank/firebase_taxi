@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FindingPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Finding you a driver</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="primary-bg">
+  <!-- Green circle with marker icon in the center -->
+  <div padding text-center="">
+    <div class="location-animation circle">
+      <ion-icon name="pin" color="light"></ion-icon>
+    </div>
+  </div>
+
+  <h2 ion-text color="light" text-center [hidden]="drivers.length">
+    No driver found
+  </h2>
+
+  <ion-list class="list-no-border list-drivers" padding>
+    <ion-item *ngFor="let driver of drivers; let i = index">
+      <span>{{ driver.name }}</span>
+
+      <img src="assets/img/loading.gif" alt="" [hidden]="i" item-end>
+      <span item-end [hidden]="!i">
+        Waiting
+      </span>
+    </ion-item>
+  </ion-list>
+
+  <div class="align-bottom" padding>
+    <button class="border-button" ion-button block color="primary" (click)="goBack()"
+            [hidden]="drivers.length">TRY AGAIN
+    </button>
+  </div>
+</ion-content>

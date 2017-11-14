@@ -1,0 +1,84 @@
+page-home,
+.home {
+  #map {
+    width: 100%;
+  }
+
+  .map-overlay {
+    position: absolute;
+    top: 10px;
+    left: 3%;
+    width: 94%;
+
+    ion-grid {
+      border-radius: 3px;
+
+      ion-col + ion-col {
+        border-left: 1px solid color($colors, border-color);
+      }
+    }
+  }
+
+  .vehicle-collapsed {
+    position: relative;
+
+    .bg {
+      min-height: 55px;
+      margin: 10px 10px;
+    }
+
+    .vehicle {
+      position: absolute;
+      top: 0;
+      box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+
+      .item-inner {
+        border: none;
+      }
+    }
+  }
+
+  .modal-bg {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+
+    .vehicles {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+
+      .round-btn,
+      .round-btn.active {
+        border-radius: 50%;
+        border: 1px solid color($colors, white);
+        background: none;
+
+        &.button-md {
+          height: 4.2rem;
+        }
+      }
+    }
+  }
+
+  .item-block.vehicle {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &.active {
+      background: color($colors, primary);
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .fee {
+      font-weight: bold;
+    }
+  }
+}

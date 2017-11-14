@@ -1,0 +1,73 @@
+<!--
+  Generated template for the JobHistoryPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Job History</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="primary-bg">
+  <ion-grid class="stats light-bg">
+    <ion-row>
+      <ion-col text-center>
+        <span class="label">Today</span>
+        <h4>{{ stats.today }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">Yesterday</span>
+        <h4>{{ stats.yesterday }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">This Month</span>
+        <h4>{{ stats.thisMonth }}</h4>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <span class="label">Last Month</span>
+        <h4>{{ stats.lastMonth }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">This Year</span>
+        <h4>{{ stats.thisYear }}</h4>
+      </ion-col>
+      <ion-col text-center>
+        <span class="label">Last Year</span>
+        <h4>{{ stats.lastYear }}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- list of history trips -->
+  <ion-list class="dark-list list-no-border">
+    <ion-item class="primary-bg" *ngFor="let trip of trips">
+      <div>
+        <span ion-text color="light">{{ trip.pickedUpAt | amDateFormat: 'YYYY-MM-DD HH:mm'}}</span>
+      </div>
+      <div>
+        <span ion-text color="gray">ID</span>
+        <span ion-text color="light">{{ trip.$key }}</span>
+      </div>
+      <div class="bold">
+        <span ion-text color="light">{{ trip.origin.vicinity }}</span>
+      </div>
+      <div>
+        <span ion-text color="light">{{ trip.destination.vicinity }}</span>
+      </div>
+      <div class="uppercase">
+        <span ion-text color="secondary">{{ trip.paymentMethod }}</span>
+      </div>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

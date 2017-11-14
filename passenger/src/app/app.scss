@@ -1,0 +1,224 @@
+// http://ionicframework.com/docs/v2/theming/
+
+// App Shared Imports
+// --------------------------------------------------
+// These are the imports which make up the design of this app.
+// By default each design mode includes these shared imports.
+// App Shared Sass variables belong in app.variables.scss.
+
+// position
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+.rlt {
+  position: relative;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.primary-bg {
+  background-color: color($colors, primary);
+}
+
+.light-bg {
+  background-color: color($colors, light);
+}
+
+.dark-bg {
+  background-color: color($colors, dark);
+}
+
+.common-bg {
+  background-color: color($colors, bg-color);
+}
+
+.light {
+  color: color($colors, light);
+}
+
+.black-transparent {
+  background: rgba(0, 0, 0, 0.8);
+  color: color($colors, white);
+}
+
+// text style
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-hint {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.round {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+// position
+.align-bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.list-no-border {
+
+  .item:first-child {
+    border: none;
+  }
+  .item:last-child {
+    border: none;
+  }
+
+  .item-inner {
+    border: none;
+  }
+}
+
+.list-full-border {
+  @extend .list-no-border;
+
+  .item,
+  .item:first-child {
+    border-bottom: 1px solid color($colors, border-color);
+
+    .item-inner {
+      border: none;
+    }
+  }
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+// side menu
+.menu-left {
+  img.profile-picture {
+    width: 7em;
+    height: 7em;
+    margin-top: 0.75em;
+    border-radius: 50%;
+  }
+}
+
+// auth page
+.logo {
+  margin: 20px auto 0;
+  width: 1.8em;
+  padding-top: 0.3em;
+  padding-bottom: 0.2em;
+  border-radius: 10%;
+  font-size: 2.5em;
+}
+
+.auth-bg {
+  background: url("../assets/img/bg2.jpg") no-repeat center;
+  background-size: 100% 100%;
+
+  .scroll-content {
+    height: 100%;
+
+    .auth-content {
+      width: 86%;
+      margin-left: 7%;
+      margin-top: 40px;
+
+      .light-bg {
+        // keep only bottom border
+        .item-input {
+          margin: 0;
+          padding-left: 0;
+          border: none;
+          border-bottom: 1px solid #DDD;
+
+          .item-inner {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.md {
+  page-home {
+
+    .booking-info {
+
+      .button-circle {
+        padding: 27px 10px;
+      }
+    }
+  }
+}
+
+// common style
+a {
+  text-decoration: none;
+}
+
+.stars {
+
+  ion-icon {
+    margin-right: 3px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.address-block {
+  margin-bottom: 2px;
+  border-radius: 3px;
+  background: url('../assets/img/dot_bg.png') color($colors, white);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+
+  .item-block {
+    background: none;
+
+    .item-inner {
+      border-bottom-color: color($colors, border-color);
+    }
+
+    div[item-left] {
+
+      span {
+        display: block;
+      }
+
+      .round {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: color($colors, danger);
+      }
+    }
+  }
+}

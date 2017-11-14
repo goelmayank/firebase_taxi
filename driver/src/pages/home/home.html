@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class=" primary-bg">
+  <div padding text-center>
+    <h3 ion-text color="light">{{ (driver)?.name }}</h3>
+    <h4 ion-text color="gray">{{ (driver)?.plate }}</h4>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <span ion-text color="gray">Referral Code</span>
+          <h4 ion-text color="light">{{ (driver)?.refCode }}</h4>
+        </ion-col>
+        <ion-col>
+          <span ion-text color="gray">Rating</span>
+          <h4 *ngIf="(driver)?.rating">
+            <ion-icon name="md-star" color="yellow" *ngFor="let start of range(driver.rating)"></ion-icon>
+            <ion-icon name="md-star" color="dark" *ngFor="let start of range(4.9- driver.rating)"></ion-icon>
+          </h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <button ion-button block padding color="gray">
+      ${{ (driver)?.balance }}
+    </button>
+  </div>
+</ion-content>

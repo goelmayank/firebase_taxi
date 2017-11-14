@@ -1,0 +1,67 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ trip.pickedUpAt | amDateFormat: 'YYYY-MM-DD HH:mm'}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="dark-bg" padding>
+    <span ion-text color="light" class="pull-left">Booking ID:</span>
+    <span ion-text color="light" class="pull-right">{{ trip.$key }}</span>
+    <div class="clear"></div>
+  </div>
+
+  <ion-list no-lines>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{ (driver)?.photoURL }}" alt="">
+      </ion-avatar>
+      <div>
+        {{ (driver)?.name }}
+      </div>
+    </ion-item>
+    <ion-item class="bg-color1">
+      Fare: <strong>{{ trip.currency }}{{ trip.fee }}</strong>
+    </ion-item>
+    <ion-item class="bg-color2">
+      <span ion-text color="dark">Notes to driver</span>
+      <br>
+      <span>{{ trip.note }}</span>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="list-no-border address-block">
+    <ion-item>
+      <div item-left text-center>
+        <span class="round"></span>
+      </div>
+      <div>{{ trip.origin.vicinity }}</div>
+    </ion-item>
+    <ion-item>
+      <div item-left text-center>
+        <ion-icon name="pin" color="danger"></ion-icon>
+      </div>
+      <div>{{ trip.destination.vicinity }}</div>
+    </ion-item>
+  </ion-list>
+
+  <div text-center>
+    <span>You rated</span>
+    <div class="stars" *ngIf="driver">
+      <ion-icon name="md-star" color="yellow" *ngFor="let star of range(trip.rating)"></ion-icon>
+      <ion-icon name="ios-star-outline" color="gray" *ngFor="let star of range(4.9 - trip.rating)"></ion-icon>
+    </div>
+  </div>
+</ion-content>

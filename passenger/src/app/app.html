@@ -1,0 +1,27 @@
+<ion-menu [content]="content">
+
+  <ion-content class="menu-left">
+    <!-- User profile -->
+    <div text-center padding-top padding-bottom class="primary-bg menu-left">
+      <a (click)="viewProfile()" menuClose>
+        <img class="profile-picture" src="{{ user.photoURL }}">
+        <h4 ion-text color="light">{{ user.displayName }}</h4>
+      </a>
+    </div>
+
+    <ion-list class="list-full-border">
+      <button ion-item menuClose *ngFor="let page of pages" (click)="openPage(page)">
+        <ion-icon item-left name="{{ page.icon }}"></ion-icon>
+        {{ page.title }}
+        <ion-badge color="danger" item-right *ngIf="page.count">{{ page.count }}</ion-badge>
+      </button>
+      <button ion-item menuClose (click)="logout()">
+        <ion-icon item-left name="ios-exit-outline"></ion-icon>
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

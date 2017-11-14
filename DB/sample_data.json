@@ -1,0 +1,52 @@
+{
+  "master_settings" : {
+    "prices" : {
+      "Hanoi" : {
+        "currency" : "$",
+        "vehicles" : {
+          "car" : {
+            "enable" : true,
+            "icon" : "sedan",
+            "name" : "Car",
+            "price" : 0.3
+          },
+          "suv" : {
+            "enable" : true,
+            "icon" : "suv",
+            "name" : "SUV",
+            "price" : 0.4
+          },
+          "taxi" : {
+            "enable" : true,
+            "icon" : "taxi",
+            "name" : "Taxi",
+            "price" : 0.5
+          }
+        }
+      },
+      "default" : {
+        "currency" : "$",
+        "vehicles" : {
+          "car" : {
+            "enable" : true,
+            "icon" : "sedan",
+            "name" : "Car",
+            "price" : 0.2
+          },
+          "suv" : {
+            "enable" : true,
+            "icon" : "suv",
+            "name" : "SUV",
+            "price" : 0.2
+          },
+          "taxi" : {
+            "enable" : true,
+            "icon" : "taxi",
+            "name" : "Taxi",
+            "price" : 0.4
+          }
+        }
+      }
+    }
+  }
+}

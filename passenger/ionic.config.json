@@ -1,0 +1,8 @@
+{
+  "name": "firebase_taxi",
+  "app_id": "c2d4ba42",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

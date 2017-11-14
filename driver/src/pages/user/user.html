@@ -1,0 +1,74 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>User</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="save()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- Cover and profile picture -->
+  <div class="driver-top primary-bg" text-center padding>
+    <div class="driver-picture">
+      <img class="profile-picture circle" src="{{ user.photoURL }}" (click)="chooseFile()">
+      <form ngNoForm>
+        <input id="avatar" name="file" type="file" (change)="upload()">
+      </form>
+    </div>
+    <h2 ion-text color="light">{{ user.name }}</h2>
+  </div>
+
+  <!-- User information -->
+  <ion-list class="list-full-border">
+
+    <ion-item>
+      <ion-label stacked color="primary">Name</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Phone</ion-label>
+      <ion-input type="text" [(ngModel)]="user.phoneNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Email</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Plate</ion-label>
+      <ion-input type="text" [(ngModel)]="user.plate"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked color="primary">Brand</ion-label>
+      <ion-input type="text" [(ngModel)]="user.brand"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="types">
+      <ion-label stacked color="primary">Type</ion-label>
+      <ion-select [(ngModel)]="user.type">
+        <ion-option value="{{ type }}" *ngFor="let type of types">
+          {{ type }}
+        </ion-option>
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+</ion-content>
